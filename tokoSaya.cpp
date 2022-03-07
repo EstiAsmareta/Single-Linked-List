@@ -1,11 +1,11 @@
-#include "Mahasiswa.h"
+#include "tokoSaya.h"
 
 void create_list(single_linked_list *l){
   l->first = NULL;
 }
-address alokasi(string nim, string nama){
+address alokasi(string kode, string nama){
   address p = new elemen;
-  p->info.nim = nim;
+  p->info.kode = kode;
   p->info.nama = nama;
   p->next = NULL;
 
@@ -21,7 +21,7 @@ void view(single_linked_list l){
   if(l.first != NULL){
     address p = l.first;
     while(p != NULL){
-      cout << "nim : " << p->info.nim <<", nama : " <<p->info.nama << endl;
+      cout << "kode : " << p->info.kode <<", nama : " <<p->info.nama << endl;
       p = p->next;
     }
   }
@@ -72,7 +72,7 @@ void delete_last(single_linked_list *l){
     }
   }else{
     cout <<"list telah kosong" << endl;
-  }
+  } 
 }
 void insert_after(single_linked_list *l, address elm, int a){
   if(l->first != NULL){
@@ -118,14 +118,15 @@ void delete_after(single_linked_list *l, int a){
     cout << "list telah kosong"<< endl;
   }
 }
-address search(single_linked_list l, string nim){
+address search(single_linked_list l, string kode){
   if(l.first != NULL){
     address p = l.first;
-    while (p != NULL && p->info.nim != nim){
+    while (p != NULL && p->info.kode != kode){
       p = p->next;
     }
 
     if(p!=NULL){
+      cout<< "kode : " << kode << " ditemukan"<< endl;
         return p;
     } else{
       return NULL;
