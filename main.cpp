@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Mahasiswa.h"
+#include "Tokosaya.h"
 
 using namespace std;
 
